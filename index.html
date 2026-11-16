@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Noodle Khaoyai</title>
+<meta name="description" content="Happy Noodle & Art Toy Cafe — DIY Korean ramyeon bar and art-toy cafe at The E-SAN GATE, Khao Yai. เว็บไซต์ทางการ 3 ภาษา">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Thai+2:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+/* ---- Happy Noodle — playful sticker-style Korean ramyeon bar + art toy cafe ----
+   Layout: single column, cream bands + white sticker-cards + one dark "chalkboard" menu, centered <=1080px */
+:root{
+  --cream:#FFF7EA; --card:#FFFFFF; --band:#FFEFD4;
+  --ink:#3B1F10; --ink-soft:#6E4B33;
+  --yellow:#F7A81B; --orange:#E87A12; --red:#D83A2C;
+  --line:#ECDFC8; --shadow:rgba(90,52,20,.16);
+  --chalk:#231812; --chalk-ink:#FBEBD6; --chalk-soft:#C9B49E;
+  --hero-ink:#FFF6E6;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --cream:#17100A; --card:#241812; --band:#1F140C;
+  --ink:#FBEBD6; --ink-soft:#CBB49E;
+  --yellow:#FBB82E; --orange:#F18A2A; --red:#F1584A;
+  --line:#3A281C; --shadow:rgba(0,0,0,.45);
+  --chalk:#120C07; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --cream:#17100A; --card:#241812; --band:#1F140C;
+  --ink:#FBEBD6; --ink-soft:#CBB49E;
+  --yellow:#FBB82E; --orange:#F18A2A; --red:#F1584A;
+  --line:#3A281C; --shadow:rgba(0,0,0,.45);
+  --chalk:#120C07; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--cream); color:var(--ink);
+  font-family:'Nunito','Noto Sans Thai','Noto Sans SC',system-ui,sans-serif;
+  line-height:1.65; -webkit-font-smoothing:antialiased;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--cream)}
+h1,h2,h3,.disp{font-family:'Baloo 2','Baloo Thai 2','Noto Sans SC',system-ui,sans-serif;line-height:1.12;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1080px;margin-inline:auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+
+/* ---- header ---- */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--cream) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:14px;min-height:58px}
+.bar .brand{display:flex;align-items:center;gap:9px;font-family:'Baloo 2','Baloo Thai 2',sans-serif;font-weight:800;font-size:1.05rem;margin-right:auto;color:var(--ink);text-decoration:none}
+.bar .brand .dot{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFD15A,var(--orange));display:grid;place-items:center;font-size:16px;box-shadow:0 2px 0 var(--shadow)}
+nav.top{display:none;gap:20px;font-weight:700;font-size:.93rem}
+nav.top a{text-decoration:none;color:var(--ink-soft);white-space:nowrap}
+nav.top a:hover{color:var(--orange)}
+.lang{display:flex;gap:4px;background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:3px}
+.lang button{font-family:inherit;font-weight:800;font-size:.78rem;border:0;background:transparent;color:var(--ink-soft);padding:5px 9px;border-radius:999px;cursor:pointer;line-height:1}
+.lang button[aria-pressed="true"]{background:var(--red);color:#fff}
+@media(min-width:840px){nav.top{display:flex}}
+
+/* ---- hero ---- */
+.hero{position:relative;overflow:hidden;background:#140c06}
+.hero::before{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(15,9,4,.32),rgba(15,9,4,.78)),url('assets/hero_night.jpg') center 46%/cover no-repeat}
+.hero .wrap{position:relative;padding-block:48px 56px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:17px;color:var(--hero-ink)}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#3B1F10;font-weight:800;font-size:.8rem;letter-spacing:.4px;text-transform:uppercase;padding:7px 15px;border-radius:999px;box-shadow:0 3px 0 rgba(0,0,0,.2)}
+.hero .logo{width:min(420px,80vw);filter:drop-shadow(0 8px 20px rgba(0,0,0,.5))}
+.hero .tagline{font-family:'Baloo 2','Baloo Thai 2','Noto Sans SC',sans-serif;font-weight:700;font-size:clamp(1.12rem,4.4vw,1.68rem);max-width:20ch;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+.hero .loc{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:1rem;color:#FFE7B8}
+.cta{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin-top:2px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Nunito','Noto Sans Thai','Noto Sans SC',sans-serif;font-weight:800;font-size:.97rem;text-decoration:none;padding:12px 20px;border-radius:14px;border:2px solid transparent;cursor:pointer;transition:transform .12s ease}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--red);color:#fff;box-shadow:0 4px 0 #9e241b}
+.btn-primary:active{box-shadow:0 2px 0 #9e241b}
+.btn-sun{background:var(--yellow);color:#3B1F10;box-shadow:0 4px 0 #b97f12}
+.btn-sun:active{box-shadow:0 2px 0 #b97f12}
+.btn-ghost{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.55)}
+
+/* ---- sections ---- */
+section .wrap{padding-block:52px}
+.ey{font-family:'Baloo 2','Baloo Thai 2',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:8px}
+.ey::before{content:"";width:26px;height:3px;border-radius:3px;background:var(--yellow)}
+h2.sec{font-size:clamp(1.65rem,5vw,2.4rem);margin:11px 0 0;color:var(--ink)}
+.lead{color:var(--ink-soft);font-size:1.07rem;margin-top:15px;max-width:60ch}
+
+/* about */
+.about{background:var(--card)}
+.split{display:grid;gap:30px;align-items:center}
+@media(min-width:820px){.split{grid-template-columns:1fr 1.05fr}}
+.photo-card{border-radius:22px;overflow:hidden;border:3px solid var(--ink);box-shadow:8px 10px 0 var(--shadow);background:#000}
+.photo-card img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;max-height:520px}
+
+/* how it works */
+.steps{display:grid;gap:16px;margin-top:28px;grid-template-columns:1fr}
+@media(min-width:720px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:22px 20px;box-shadow:0 6px 0 var(--shadow);position:relative}
+.step .no{position:absolute;top:-16px;left:20px;width:38px;height:38px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.1rem;box-shadow:0 3px 0 rgba(0,0,0,.2)}
+.step h3{font-size:1.12rem;color:var(--ink);margin-top:10px}
+.step p{color:var(--ink-soft);font-size:.96rem;margin-top:6px}
+
+/* menu — chalkboard */
+.menu{background:var(--band)}
+.board{margin-top:28px;background:var(--chalk);border-radius:24px;padding:30px 24px;color:var(--chalk-ink);border:3px solid #0d0906;box-shadow:0 12px 0 var(--shadow);background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:14px 14px}
+.deal{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;justify-content:center;text-align:center;background:var(--yellow);color:#2a1609;font-weight:800;border-radius:14px;padding:12px 18px;font-size:1rem}
+.mcols{display:grid;gap:26px;margin-top:26px;grid-template-columns:1fr}
+@media(min-width:760px){.mcols{grid-template-columns:1fr 1fr}}
+.mcat{margin:0 0 14px}
+.mcat .ct{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;border-bottom:1.5px dashed rgba(255,255,255,.22);padding-bottom:7px;margin-bottom:11px}
+.mcat .ct h3{font-family:'Baloo 2','Baloo Thai 2',sans-serif;font-size:1.22rem;color:#fff}
+.mcat .ct .price{margin-left:auto;font-family:'Baloo 2',sans-serif;font-weight:800;color:var(--yellow);font-size:1.15rem;white-space:nowrap}
+.mcat .ct .free{font-size:.78rem;font-weight:800;color:#2a1609;background:var(--yellow);padding:3px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.3px}
+.mi{display:flex;gap:9px;align-items:baseline;padding:3px 0;font-size:1rem}
+.mi b{font-weight:700;color:#fff}
+.mi span{color:var(--chalk-soft);font-size:.9rem}
+.tier{display:flex;gap:12px;align-items:flex-start;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.tier:last-child{border-bottom:0}
+.tier .pz{flex:0 0 auto;width:46px;height:46px;border-radius:50%;background:var(--orange);color:#2a1609;display:grid;place-items:center;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:.95rem}
+.tier .pz.t10{background:#6EC6E6}.tier .pz.t15{background:#F6C445}.tier .pz.t20{background:#F28F3B}.tier .pz.t25{background:#E25C4B;color:#fff}
+.tier .items{display:flex;flex-wrap:wrap;gap:4px 14px}
+.tier .items span{color:var(--chalk-ink);font-size:.97rem}
+.tier .items span i{color:var(--chalk-soft);font-style:normal;font-size:.84rem}
+.mnote{margin-top:18px;text-align:center;color:var(--chalk-soft);font-size:.85rem}
+
+/* art toys */
+.toys{background:var(--card)}
+.toys .split2{display:grid;gap:14px;margin-top:26px;grid-template-columns:1fr 1fr}
+@media(min-width:720px){.toys .split2{grid-template-columns:1fr 1fr;max-width:none}}
+.toys figure{margin:0;border-radius:20px;overflow:hidden;border:3px solid var(--ink);box-shadow:6px 8px 0 var(--shadow)}
+.toys figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{background:var(--band);border:1.5px solid var(--line);border-radius:999px;padding:6px 14px;font-weight:700;font-size:.9rem;color:var(--ink)}
+
+/* gallery */
+.gallery{background:var(--band)}
+.gal{display:grid;gap:14px;margin-top:26px;grid-template-columns:1fr 1fr}
+@media(min-width:760px){.gal{grid-template-columns:repeat(3,1fr)}}
+.gal figure{margin:0;position:relative;border-radius:18px;overflow:hidden;border:3px solid var(--ink);box-shadow:5px 7px 0 var(--shadow)}
+.gal img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 14px 11px;color:#fff;font-weight:700;font-size:.9rem;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+
+/* reviews */
+.reviews .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:13px}
+.stars{font-size:1.9rem;letter-spacing:4px;color:var(--yellow);line-height:1}
+.rev-score{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:2.9rem;color:var(--ink);line-height:1}
+.rev-score small{font-size:1.05rem;color:var(--ink-soft);font-weight:700}
+
+/* visit */
+.visit{background:var(--card)}
+.vgrid{display:grid;gap:16px;margin-top:26px;grid-template-columns:1fr}
+@media(min-width:680px){.vgrid{grid-template-columns:1fr 1fr}}
+.vcard{background:var(--cream);border:2px solid var(--line);border-radius:18px;padding:19px 22px;display:flex;flex-direction:column;gap:5px}
+.vcard .vl{font-family:'Baloo 2','Baloo Thai 2',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange)}
+.vcard .vv{font-size:1.08rem;font-weight:700;color:var(--ink)}
+.vcard .vv a{color:var(--red);text-decoration:none}
+.vcard .sub{font-size:.88rem;color:var(--ink-soft)}
+.find{margin-top:20px;background:var(--band);border:2px dashed var(--orange);border-radius:18px;padding:17px 22px;color:var(--ink);font-weight:700;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.find .pin{font-size:24px}
+
+/* footer */
+footer{background:#2A1609;color:#F6E4CE}
+:root[data-theme="dark"] footer,:root:not([data-theme="light"]) footer{background:#0F0A06}
+footer .wrap{padding-block:38px;display:flex;flex-direction:column;align-items:center;gap:13px;text-align:center}
+footer .flogo{width:190px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.45))}
+.fsocial{display:flex;gap:11px;flex-wrap:wrap;justify-content:center}
+.fsocial a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;color:#2A1609;background:var(--yellow);padding:10px 18px;border-radius:12px}
+.fnote{font-size:.88rem;color:#C9A98A;max-width:48ch}
+.credit{font-size:.8rem;color:#9b7b5e}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top"><span class="dot">🍜</span><span>Happy Noodle</span></a>
+    <nav class="top">
+      <a href="#about" data-t="nav_about">About</a>
+      <a href="#menu" data-t="nav_menu">Menu</a>
+      <a href="#toys" data-t="nav_toys">Art Toys</a>
+      <a href="#gallery" data-t="nav_gallery">Gallery</a>
+      <a href="#visit" data-t="nav_visit">Visit</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="th" aria-pressed="true">TH</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge" data-t="badge">Now Open</span>
+      <img class="logo" src="assets/logo.png" alt="Happy Noodle">
+      <p class="tagline" data-t="tagline">DIY Korean Ramyeon Bar &amp; Art Toy Cafe</p>
+      <span class="loc">📍 <span data-t="loc">The E-SAN GATE · Khao Yai</span></span>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://maps.app.goo.gl/eMW5UatSXkcVJE6C8" target="_blank" rel="noopener" data-t="btn_dir">Get Directions</a>
+        <a class="btn btn-sun" href="#menu" data-t="btn_menu">See Menu</a>
+        <a class="btn btn-ghost" href="https://www.facebook.com/happymamaarttoycafe" target="_blank" rel="noopener" data-t="btn_fb">Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap split">
+      <div class="photo-card"><img src="assets/diy.jpg" alt="Self-cook noodle machines at the Happy Noodle counter"></div>
+      <div>
+        <span class="ey" data-t="about_ey">About us</span>
+        <h2 class="sec" data-t="about_h">Pick it, cook it, enjoy it</h2>
+        <p class="lead" data-t="about_p">Happy Noodle is a self-serve Korean ramyeon bar and art-toy cafe at Khao Yai. Choose your noodles and toppings, cook them yourself at our automatic noodle machines, and eat surrounded by hundreds of collectible figures.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="wrap">
+      <span class="ey" data-t="how_ey">How it works</span>
+      <h2 class="sec" data-t="how_h">Three easy steps</h2>
+      <div class="steps">
+        <div class="step"><div class="no">1</div><h3 data-t="s1_h">Choose &amp; Pay</h3><p data-t="s1_p">Pick your ramyeon and toppings, then pay at the cashier.</p></div>
+        <div class="step"><div class="no">2</div><h3 data-t="s2_h">Cook at the machine</h3><p data-t="s2_p">Tear the packet into the bowl and cook it at the automatic machine.</p></div>
+        <div class="step"><div class="no">3</div><h3 data-t="s3_h">Add your egg last</h3><p data-t="s3_p">Drop the egg in the last minute so it won't stick to the bottom.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <span class="ey" data-t="menu_ey">Menu</span>
+      <h2 class="sec" data-t="menu_h">Self-cook ramyeon bar</h2>
+      <div class="board">
+        <div class="deal"><span>🍜</span><span data-t="menu_deal">Choose 1 ramyeon packet — free cooking bowl &amp; chopsticks included</span></div>
+        <div class="mcols">
+          <div>
+            <div class="mcat">
+              <div class="ct"><h3 data-t="m_korean">Korean Ramyeon</h3><span class="free" data-t="m_free">+ free kimchi</span><span class="price">99฿</span></div>
+              <div class="mi"><b>Samyang Buldak</b><span>· เผ็ดพ่นไฟ</span></div>
+              <div class="mi"><b>Samyang Original</b><span>· ออริจินัล</span></div>
+              <div class="mi"><b>Samyang Kimchi</b><span>· กิมจิ</span></div>
+              <div class="mi"><b>Shin Ramyun</b><span>· ชินราเมียน</span></div>
+              <div class="mi"><b>Chapagetti</b><span>· จาปาเกตตี้</span></div>
+              <div class="mi"><b>Paldo Bibimmyeon</b><span>· บิบิมมยอน</span></div>
+              <div class="mi"><b>Neoguri</b><span>· นีโอกูริ</span></div>
+            </div>
+            <div class="mcat">
+              <div class="ct"><h3 data-t="m_thai">Thai Ramen</h3><span class="price">45฿</span></div>
+              <div class="mi"><b>Tom Yum Kung</b><span>· ต้มยำกุ้ง (น้ำข้น / น้ำใส)</span></div>
+              <div class="mi" data-t="m_thai_more" style="color:var(--chalk-soft)">&amp; more flavors</div>
+            </div>
+            <div class="mcat">
+              <div class="ct"><h3 data-t="m_drinks">Drinks</h3></div>
+              <div class="mi"><b>Water</b><span>· น้ำเปล่า</span><span class="price" style="margin-left:auto">25฿</span></div>
+              <div class="mi"><b>Soft Drinks</b><span>· น้ำอัดลม</span><span class="price" style="margin-left:auto">30฿</span></div>
+              <div class="mi"><b>Soju</b><span>· โซจู</span><span class="price" style="margin-left:auto">190฿</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="mcat">
+              <div class="ct"><h3 data-t="m_top">Toppings</h3></div>
+              <div class="tier"><div class="pz t10">10฿</div><div class="items"><span>Egg <i>ไข่ไก่</i></span><span>Spring Onion <i>ต้นหอม</i></span></div></div>
+              <div class="tier"><div class="pz t15">15฿</div><div class="items"><span>Kimchi <i>กิมจิ</i></span><span>Cheddar Cheese <i>ชีส</i></span><span>Crab Stick <i>ปูอัด</i></span></div></div>
+              <div class="tier"><div class="pz t20">20฿</div><div class="items"><span>Fish Tofu <i>เต้าหู้ปลา</i></span><span>Mini Smoked Sausage <i>ไส้กรอกรมควัน</i></span><span>Tteokbokki <i>ต็อกบกกี</i></span><span>Korean Fish Cake <i>ออมุก</i></span><span>Seafood Tofu <i>เต้าหู้ซีฟู้ด</i></span></div></div>
+              <div class="tier"><div class="pz t25">25฿</div><div class="items"><span>Sliced Pork <i>หมูสไลด์</i></span><span>Pork Ham <i>แฮมหมู</i></span></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="mnote" data-t="menu_note">Prices in Thai Baht (฿). Menu may change — please check the board in store.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ART TOYS -->
+  <section class="toys" id="toys">
+    <div class="wrap">
+      <span class="ey" data-t="toys_ey">Art toys</span>
+      <h2 class="sec" data-t="toys_h">A cafe full of collectibles</h2>
+      <p class="lead" data-t="toys_p">From Pikachu and Pop Mart to One Piece and Dimoo, the shop is packed with figures to spot and photograph while your noodles cook.</p>
+      <div class="split2">
+        <figure><img src="assets/toys_shelf.jpg" alt="Shelves of collectible art toys and Korean ramyeon"></figure>
+        <figure><img src="assets/toys_entrance.jpg" alt="Large art toy figures at the entrance"></figure>
+      </div>
+      <div class="chips">
+        <span class="chip">Pikachu</span><span class="chip">Pop Mart</span><span class="chip">One Piece</span>
+        <span class="chip">Dimoo</span><span class="chip">Iron Man</span><span class="chip">Mario</span><span class="chip">Crayon Shin-chan</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <span class="ey" data-t="gal_ey">Gallery</span>
+      <h2 class="sec" data-t="gal_h">A peek around</h2>
+      <div class="gal">
+        <figure><img src="assets/storefront_day.jpg" alt="Happy Noodle storefront by day"><figcaption data-t="g1">The shop by day</figcaption></figure>
+        <figure><img src="assets/night_tree.jpg" alt="Happy Noodle at night under the big tree"><figcaption data-t="g2">Warm nights at Khao Yai</figcaption></figure>
+        <figure><img src="assets/wall_logo.jpg" alt="Happy Noodle wall logo and One Piece figure"><figcaption data-t="g3">The photo wall</figcaption></figure>
+        <figure><img src="assets/counter_vibe.jpg" alt="Counter with Joker and Harley figures and ramyeon"><figcaption data-t="g4">Fun at the counter</figcaption></figure>
+        <figure><img src="assets/night_garden.jpg" alt="Garden seating at night with string lights"><figcaption data-t="g5">Garden seating</figcaption></figure>
+        <figure><img src="assets/camping.jpg" alt="Camping-style chairs on the lawn"><figcaption data-t="g6">Chill on the lawn</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="wrap">
+      <span class="ey" data-t="rev_ey">Loved by guests</span>
+      <div class="rev-score">5.0 <small>/ 5</small></div>
+      <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <p class="lead" style="text-align:center" data-t="rev_p">Our first guests gave Happy Noodle a perfect 5.0 on Google. Come try it, then tell everyone!</p>
+      <a class="btn btn-primary" href="https://search.google.com/local/writereview?placeid=ChIJ5xw5d48zHDERIpnUoZgeBN4" target="_blank" rel="noopener" data-t="rev_btn">Write a review</a>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <span class="ey" data-t="visit_ey">Visit us</span>
+      <h2 class="sec" data-t="visit_h">Come find us</h2>
+      <div class="vgrid">
+        <div class="vcard"><span class="vl" data-t="v_addr_l">Address</span><span class="vv">The E-SAN GATE, 139 Thanarat Rd</span><span class="sub" data-t="v_addr_sub">Mu Si, Pak Chong, Nakhon Ratchasima 30130</span></div>
+        <div class="vcard"><span class="vl" data-t="v_hours_l">Opening hours</span><span class="vv" data-t="v_hours">Daily 10:00 – 22:00</span><span class="sub" data-t="v_hours_sub">Open every day</span></div>
+        <div class="vcard"><span class="vl" data-t="v_phone_l">Phone</span><span class="vv"><a href="tel:0625578999">062 557 8999</a></span></div>
+        <div class="vcard"><span class="vl" data-t="v_map_l">Map</span><span class="vv"><a href="https://maps.app.goo.gl/eMW5UatSXkcVJE6C8" target="_blank" rel="noopener" data-t="v_map_v">Open in Google Maps →</a></span></div>
+      </div>
+      <div class="find"><span class="pin">🧭</span><span data-t="v_find">Search <b>"The E-SAN GATE"</b> in Google Maps and walk inside the village — we're right there.</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="flogo" src="assets/logo.png" alt="Happy Noodle">
+    <div class="fsocial">
+      <a href="https://www.facebook.com/happymamaarttoycafe" target="_blank" rel="noopener" data-t="foot_fb">📘 Follow on Facebook</a>
+      <a href="https://maps.app.goo.gl/eMW5UatSXkcVJE6C8" target="_blank" rel="noopener" data-t="foot_map">📍 Google Maps</a>
+    </div>
+    <p class="fnote" data-t="foot_note">Happy Noodle &amp; Art Toy Cafe — Korean ramyeon, Thai Mama and collectible toys at The E-SAN GATE, Khao Yai.</p>
+    <p class="credit">© 2026 Happy Noodle Khaoyai</p>
+  </div>
+</footer>
+
+<script>
+const T = {
+  th:{
+    nav_about:"เกี่ยวกับร้าน", nav_menu:"เมนู", nav_toys:"อาร์ตทอย", nav_gallery:"แกลเลอรี", nav_visit:"มาหาเรา",
+    badge:"เปิดแล้ว · Now Open",
+    tagline:"ราเมียนเกาหลี DIY &amp; อาร์ตทอยคาเฟ่ ที่เขาใหญ่",
+    loc:"The E-SAN GATE · เขาใหญ่",
+    btn_dir:"นำทางมาร้าน", btn_menu:"ดูเมนู", btn_fb:"เฟซบุ๊ก",
+    about_ey:"เกี่ยวกับเรา", about_h:"เลือกเอง ต้มเอง อร่อยเอง",
+    about_p:"Happy Noodle คือร้านราเมียนเกาหลีแบบ DIY และอาร์ตทอยคาเฟ่ที่เขาใหญ่ เลือกเส้นและท็อปปิ้งที่ชอบ ต้มเองที่เครื่องต้มอัตโนมัติ แล้วนั่งกินท่ามกลางฟิกเกอร์สะสมนับร้อยตัว",
+    how_ey:"วิธีสั่ง", how_h:"ง่ายๆ แค่ 3 ขั้นตอน",
+    s1_h:"เลือกและจ่ายเงิน", s1_p:"เลือกมาม่าและท็อปปิ้งที่ชอบ แล้วจ่ายเงินที่แคชเชียร์",
+    s2_h:"ต้มที่เครื่อง", s2_p:"ฉีกซองใส่ถ้วย แล้วต้มที่เครื่องอัตโนมัติ",
+    s3_h:"ใส่ไข่นาทีสุดท้าย", s3_p:"ใส่ไข่ในนาทีสุดท้าย เพื่อไม่ให้ติดก้นถ้วย",
+    menu_ey:"เมนู", menu_h:"ราเมียนต้มเองสไตล์คุณ",
+    menu_deal:"เลือกมาม่า 1 ซอง — ฟรีถ้วยต้มและตะเกียบ",
+    m_korean:"มาม่าเกาหลี", m_free:"+ ฟรีกิมจิ", m_thai:"มาม่าไทย", m_thai_more:"&amp; และรสอื่นๆ",
+    m_drinks:"เครื่องดื่ม", m_top:"ท็อปปิ้ง",
+    menu_note:"ราคาเป็นเงินบาท (฿) · เมนูอาจเปลี่ยนแปลง กรุณาดูกระดานหน้าร้าน",
+    toys_ey:"อาร์ตทอย", toys_h:"คาเฟ่ที่เต็มไปด้วยของสะสม",
+    toys_p:"ตั้งแต่ Pikachu, Pop Mart ไปจนถึง One Piece และ Dimoo ทั้งร้านเต็มไปด้วยฟิกเกอร์ให้ชมและถ่ายรูประหว่างรอมาม่าสุก",
+    gal_ey:"แกลเลอรี", gal_h:"แวะดูรอบๆ ร้าน",
+    g1:"ร้านตอนกลางวัน", g2:"ค่ำคืนอบอุ่นที่เขาใหญ่", g3:"ผนังถ่ายรูป", g4:"สนุกที่เคาน์เตอร์", g5:"โซนนั่งในสวน", g6:"ชิลบนสนามหญ้า",
+    rev_ey:"ลูกค้าหลงรัก", rev_p:"ลูกค้ากลุ่มแรกให้ Happy Noodle เต็ม 5.0 บน Google มาลองแล้วช่วยบอกต่อกันนะ!",
+    rev_btn:"เขียนรีวิว",
+    visit_ey:"มาหาเรา", visit_h:"แวะมาเจอกัน",
+    v_addr_l:"ที่อยู่", v_addr_sub:"ตำบลหมูสี อำเภอปากช่อง นครราชสีมา 30130",
+    v_hours_l:"เวลาเปิด", v_hours:"ทุกวัน 10:00 – 22:00", v_hours_sub:"เปิดทุกวัน",
+    v_phone_l:"โทร", v_map_l:"แผนที่", v_map_v:"เปิดใน Google Maps →",
+    v_find:'ค้นหา <b>"The E-SAN GATE"</b> ใน Google Maps แล้วเดินเข้ามาในโครงการ ร้านเราอยู่ด้านใน',
+    foot_fb:"📘 ติดตามเฟซบุ๊ก", foot_map:"📍 Google Maps",
+    foot_note:"Happy Noodle &amp; Art Toy Cafe — ราเมียนเกาหลี มาม่าไทย และอาร์ตทอย ที่ The E-SAN GATE เขาใหญ่"
+  },
+  en:{
+    nav_about:"About", nav_menu:"Menu", nav_toys:"Art Toys", nav_gallery:"Gallery", nav_visit:"Visit",
+    badge:"Now Open",
+    tagline:"DIY Korean Ramyeon Bar &amp; Art Toy Cafe · Khao Yai",
+    loc:"The E-SAN GATE · Khao Yai",
+    btn_dir:"Get Directions", btn_menu:"See Menu", btn_fb:"Facebook",
+    about_ey:"About us", about_h:"Pick it, cook it, enjoy it",
+    about_p:"Happy Noodle is a self-serve Korean ramyeon bar and art-toy cafe at Khao Yai. Choose your noodles and toppings, cook them yourself at our automatic noodle machines, and eat surrounded by hundreds of collectible figures.",
+    how_ey:"How it works", how_h:"Three easy steps",
+    s1_h:"Choose &amp; Pay", s1_p:"Pick your ramyeon and toppings, then pay at the cashier.",
+    s2_h:"Cook at the machine", s2_p:"Tear the packet into the bowl and cook it at the automatic machine.",
+    s3_h:"Add your egg last", s3_p:"Drop the egg in the last minute so it won't stick to the bottom.",
+    menu_ey:"Menu", menu_h:"Self-cook ramyeon bar",
+    menu_deal:"Choose 1 ramyeon packet — free cooking bowl &amp; chopsticks included",
+    m_korean:"Korean Ramyeon", m_free:"+ free kimchi", m_thai:"Thai Ramen", m_thai_more:"&amp; more flavors",
+    m_drinks:"Drinks", m_top:"Toppings",
+    menu_note:"Prices in Thai Baht (฿). Menu may change — please check the board in store.",
+    toys_ey:"Art toys", toys_h:"A cafe full of collectibles",
+    toys_p:"From Pikachu and Pop Mart to One Piece and Dimoo, the shop is packed with figures to spot and photograph while your noodles cook.",
+    gal_ey:"Gallery", gal_h:"A peek around",
+    g1:"The shop by day", g2:"Warm nights at Khao Yai", g3:"The photo wall", g4:"Fun at the counter", g5:"Garden seating", g6:"Chill on the lawn",
+    rev_ey:"Loved by guests", rev_p:"Our first guests gave Happy Noodle a perfect 5.0 on Google. Come try it, then tell everyone!",
+    rev_btn:"Write a review",
+    visit_ey:"Visit us", visit_h:"Come find us",
+    v_addr_l:"Address", v_addr_sub:"Mu Si, Pak Chong, Nakhon Ratchasima 30130",
+    v_hours_l:"Opening hours", v_hours:"Daily 10:00 – 22:00", v_hours_sub:"Open every day",
+    v_phone_l:"Phone", v_map_l:"Map", v_map_v:"Open in Google Maps →",
+    v_find:'Search <b>"The E-SAN GATE"</b> in Google Maps and walk inside the village — we\'re right there.',
+    foot_fb:"📘 Follow on Facebook", foot_map:"📍 Google Maps",
+    foot_note:"Happy Noodle &amp; Art Toy Cafe — Korean ramyeon, Thai Mama and collectible toys at The E-SAN GATE, Khao Yai."
+  },
+  zh:{
+    nav_about:"关于", nav_menu:"菜单", nav_toys:"潮玩", nav_gallery:"相册", nav_visit:"到店",
+    badge:"正式营业 · Now Open",
+    tagline:"DIY 韩式拉面 &amp; 潮玩咖啡馆 · 考艾",
+    loc:"The E-SAN GATE · 考艾",
+    btn_dir:"导航前往", btn_menu:"查看菜单", btn_fb:"脸书",
+    about_ey:"关于我们", about_h:"自己选、自己煮、尽情享用",
+    about_p:"Happy Noodle 是位于考艾的自助式韩式拉面吧与潮玩咖啡馆。挑选喜欢的面与配料，在自动煮面机上亲手煮一碗，在数百款收藏公仔的环绕中享用美食。",
+    how_ey:"点餐方式", how_h:"简单三步",
+    s1_h:"选购并付款", s1_p:"挑选拉面与配料，到收银台付款。",
+    s2_h:"在机器上煮", s2_p:"把面拆进碗里，放到自动煮面机煮熟。",
+    s3_h:"最后放鸡蛋", s3_p:"最后一分钟再放鸡蛋，避免粘在碗底。",
+    menu_ey:"菜单", menu_h:"自助煮拉面吧",
+    menu_deal:"任选 1 包拉面 — 免费赠送煮面碗与筷子",
+    m_korean:"韩式拉面", m_free:"+ 免费泡菜", m_thai:"泰式面", m_thai_more:"&amp; 更多口味",
+    m_drinks:"饮品", m_top:"配料",
+    menu_note:"价格为泰铢 (฿)。菜单可能变动，请以店内菜单板为准。",
+    toys_ey:"潮玩", toys_h:"满满收藏的咖啡馆",
+    toys_p:"从皮卡丘、泡泡玛特到海贼王与 Dimoo，店内满是公仔，煮面的同时可以尽情欣赏与拍照。",
+    gal_ey:"相册", gal_h:"随处逛逛",
+    g1:"白天的店面", g2:"考艾温馨的夜晚", g3:"拍照墙", g4:"欢乐的吧台", g5:"花园座位", g6:"草坪上放松",
+    rev_ey:"顾客喜爱", rev_p:"首批顾客在 Google 给了 Happy Noodle 满分 5.0。来尝尝，再分享给大家吧！",
+    rev_btn:"写评价",
+    visit_ey:"到店", visit_h:"来找我们吧",
+    v_addr_l:"地址", v_addr_sub:"Mu Si, Pak Chong, 那空叻差是玛府 30130",
+    v_hours_l:"营业时间", v_hours:"每天 10:00 – 22:00", v_hours_sub:"全年无休",
+    v_phone_l:"电话", v_map_l:"地图", v_map_v:"在 Google 地图打开 →",
+    v_find:'在 Google 地图搜索 <b>"The E-SAN GATE"</b>，走进园区内就能找到我们。',
+    foot_fb:"📘 关注脸书", foot_map:"📍 Google 地图",
+    foot_note:"Happy Noodle & Art Toy Cafe — 韩式拉面、泰式妈妈面与收藏潮玩，位于考艾 The E-SAN GATE。"
+  }
+};
+const htmlLang = {th:"th",en:"en",zh:"zh-Hans"};
+function applyLang(l){
+  const dict = T[l] || T.th;
+  document.querySelectorAll('[data-t]').forEach(el=>{
+    const k = el.getAttribute('data-t');
+    if(dict[k]!==undefined) el.innerHTML = dict[k];
+  });
+  document.documentElement.lang = htmlLang[l] || "th";
+  document.querySelectorAll('.lang button').forEach(b=> b.setAttribute('aria-pressed', b.dataset.lang===l ? 'true':'false'));
+  try{ localStorage.setItem('hn_lang', l); }catch(e){}
+}
+let start='th';
+try{ const s=localStorage.getItem('hn_lang'); if(s && T[s]) start=s; }catch(e){}
+document.querySelectorAll('.lang button').forEach(b=> b.addEventListener('click', ()=>applyLang(b.dataset.lang)));
+applyLang(start);
+</script>
+</body>
+</html>
